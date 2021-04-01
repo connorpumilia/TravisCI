@@ -7,7 +7,7 @@ namespace TravisCILab
     public class Math
     {
         [Test]
-        public void Add_Valid()
+        public void Add_Valid_Pumilia()
         {
             Assert.AreEqual(3, Program.Add("1", "2"));
             Assert.AreEqual(5, Program.Add("3", "2"));
@@ -15,7 +15,7 @@ namespace TravisCILab
         }
 
         [Test]
-        public void Add_Invalid()
+        public void Add_Invalid_Pumilia()
         {
             Assert.Throws<FormatException>(() => Program.Add("1", "a"));
             Assert.Throws<FormatException>(() => Program.Add("a", "1"));
@@ -23,7 +23,7 @@ namespace TravisCILab
         }
 
         [Test]
-        public void Add_Null()
+        public void Add_Null_Pumilia()
         {
             Assert.Throws<ArgumentNullException>(() => Program.Add("1", null));
             Assert.Throws<ArgumentNullException>(() => Program.Add(null, "1"));
@@ -31,5 +31,101 @@ namespace TravisCILab
         }
 
         // Implement 3 tests per operation, following a similar pattern as above
+        [Test]
+        public void Subtract_Valid_Pumilia()
+        {
+            Assert.AreEqual(5, Program.Subtract("10", "5"));
+            Assert.AreEqual(1, Program.Subtract("19", "18"));
+            Assert.AreEqual(34, Program.Subtract("43", "9"));
+        }
+
+        [Test]
+        public void Subtract_Invalid_Pumilia()
+        {
+            Assert.Throws<FormatException>(() => Program.Subtract("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Subtract("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Subtract("a", "a"));
+        }
+
+        [Test]
+        public void Subtract_Null_Pumilia()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Subtract("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Subtract(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Subtract(null, null));
+        }
+
+        [Test]
+        public void Multiply_Valid_Pumilia()
+        {
+            Assert.AreEqual(10, Program.Multiply("10", "1"));
+            Assert.AreEqual(99, Program.Multiply("9", "11"));
+            Assert.AreEqual(21, Program.Multiply("3", "7"));
+        }
+
+        [Test]
+        public void Multiply_Invalid_Pumilia()
+        {
+            Assert.Throws<FormatException>(() => Program.Multiply("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Multiply("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Multiply("a", "a"));
+        }
+
+        [Test]
+        public void Multiply_Null_Pumilia()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply(null, null));
+        }
+
+        [Test]
+        public void Divide_Valid_Pumilia()
+        {
+            Assert.AreEqual(10, Program.Divide("100", "10"));
+            Assert.AreEqual(4, Program.Divide("12", "3"));
+            Assert.AreEqual(9, Program.Divide("45", "5"));
+        }
+
+        [Test]
+        public void Divide_Invalid_Pumilia()
+        {
+            Assert.Throws<FormatException>(() => Program.Divide("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Divide("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Divide("a", "a"));
+        }
+
+        [Test]
+        public void Divide_Null_Pumilia()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Divide("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Divide(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Divide(null, null));
+        }
+
+        [Test]
+        public void Power_Valid_Pumilia()
+        {
+            Assert.AreEqual(8, Program.Power("2", "3"));
+            Assert.AreEqual(1, Program.Power("31", "0"));
+            Assert.AreEqual(25, Program.Power("5", "2"));
+        }
+
+        [Test]
+        public void Power_Invalid_Pumilia()
+        {
+            Assert.Throws<FormatException>(() => Program.Power("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Power("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Power("a", "a"));
+        }
+
+        [Test]
+        public void Power_Null_Pumilia()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Power("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Power(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Power(null, null));
+        }
+
     }
 }
